@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin Library</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <table class="table">
+      <caption>
+        My book list
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">author</th>
+          <th scope="col">pages</th>
+          <th scope="col">read it?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Dune</th>
+          <td>Frank Herbert</td>
+          <td>309</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <th scope="row">Black Boy</th>
+          <td>Richard Wright</td>
+          <td>419</td>
+          <td>Yes</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Wise Blood</th>
+          <td>Flanny O'connor</td>
+          <td>260</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <form action="/index.html">
+      <label for="title">title</label>
+      <input id="title" type="text" />
+      <label for="author">author</label>
+      <input id="author" type="text" />
+      <label for="pages">pages</label>
+      <input id="pages" type="number" />
+      <label for="read-it">read it?</label>
+      <input id="read-it" type="checkbox" />
+      <button id="submit">submit</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>

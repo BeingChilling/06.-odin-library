@@ -1,70 +1,67 @@
 "use strict";
+// / ---------------------------------Library array--------------------------------------------
+let myLibrary = [];
+// / -----------------------------------Adding book interface------------------------------------
+const addNewBook = document.getElementById("add");
+const newBookCard = document.querySelector(".add-new-book");
 
-const table = document.querySelector(".table");
-const submit = document.getElementById("submit");
+addNewBook.addEventListener("click", function () {
+  newBookCard.classList.add("display");
+});
+
+// / -------------------------------------------Book info-----------------------------------------
+// ^ When I click "add", all the information  will form a object and stored into the array.
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
 const readIt = document.getElementById("read-it");
+const addIn = document.getElementById("add-in");
 
-let myLibrary = [];
+const allBookCards = document.querySelector(".book-cards");
 
-function Book() {
-  // the constructor
-}
+addIn.addEventListener("click", function () {
+  // ? How can I make the above values into an object, and push this object into the myLibrary array?
 
-function addBookToLibrary() {
-  // do stuff...
-}
-
-// Write a function that loops through the array and each book on the page
-const everyBook = function () {
-  myLibrary.forEach((book) => {
-    console.log(book);
-  });
-};
-
-// 1. When I put in the informations at the html and click submit, all the info will form an object with title, author, pages and ifRead.
-// 1.1 These information will be added to the array. (And later be saved.)
-// ~ When I hit submit, the information will be logged to console. The input will be cleared
-// 2. The html will display the info I added.
-
-submit.addEventListener("click", function (e) {
-  const bookTitle = title.value;
-  const bookPages = pages.value;
-  const bookAuthor = author.value;
-  const read = readIt.checked === true ? "Yes" : "No";
-  e.preventDefault();
-  addBook(bookTitle, bookPages, bookAuthor, read);
-  title.value = "";
-  author.value = "";
-  pages.value = "";
-  readIt.checked = false;
+  if (!title.value || !author.value || !pages.value) {
+    alert("Please fill in something!");
+  } else {
+    // ^ Create new book's object
+    const newBook = {};
+    newBook.title = title.value;
+    newBook.author = author.value;
+    newBook.pages = pages.value;
+    newBook.readIt = readIt.checked;
+    // ^ Create book card element
+    // T- Study the code!
+    const newBookCardElement = document.createElement("div");
+    newBookCardElement.classList.add("book-card");
+    newBookCardElement.innerHTML = `
+    
+      <div class="book-title flex-r">
+        <h3 class="title">Title:</h3>
+        <h3 class="title-text">${title.value}</h3>
+      </div>
+      <div class="book-author flex-r">
+        <h3 class="author">Author:</h3>
+        <h3 class="author-text">${author.value}</h3>
+      </div>
+      <div class="book-pages flex-r">
+        <h3 class="pages">Pages:</h3>
+        <h3 class="pages-text">${pages.value}</h3>
+      </div>
+      <div class="book-read-it flex-r">
+        <h3 class="read-it">Finished:</h3>
+        <h3 class="read-it-value">${readIt.checked ? "Yes" : "No"}</h3>
+      </div>
+    
+  `;
+    allBookCards.appendChild(newBookCardElement);
+    // ^ push it into the array
+    myLibrary.push(newBook);
+    // ^ Clear interface
+    title.value = author.value = pages.value = "";
+    readIt.checked = false;
+    // ^ turn off adding new book interface
+    newBookCard.classList.remove("display");
+  }
 });
-
-const addBook = function (title, author, pages, read) {
-  const newRow = document.createElement("tr"); // Create a new <tr> element
-
-  // Create <td> elements for each column
-  const titleCell = document.createElement("th");
-  titleCell.setAttribute("scope", "row");
-  titleCell.textContent = title;
-
-  const authorCell = document.createElement("td");
-  authorCell.textContent = author;
-
-  const pagesCell = document.createElement("td");
-  pagesCell.textContent = pages;
-
-  const readCell = document.createElement("td");
-  readCell.textContent = read;
-
-  // Append the <td> elements to the <tr> element
-  newRow.appendChild(titleCell);
-  newRow.appendChild(authorCell);
-  newRow.appendChild(pagesCell);
-  newRow.appendChild(readCell);
-
-  // Append the <tr> element to the table
-  table.appendChild(newRow);
-};

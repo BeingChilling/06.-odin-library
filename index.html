@@ -4,55 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Odin Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=REM:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <table class="table">
-      <caption>
-        My book list
-      </caption>
-      <thead>
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">author</th>
-          <th scope="col">pages</th>
-          <th scope="col">read it?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Dune</th>
-          <td>Frank Herbert</td>
-          <td>309</td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <th scope="row">Black Boy</th>
-          <td>Richard Wright</td>
-          <td>419</td>
-          <td>Yes</td>
-        </tr>
-
-        <tr>
-          <th scope="row">Wise Blood</th>
-          <td>Flanny O'connor</td>
-          <td>260</td>
-          <td>Yes</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr />
-    <form action="/index.html">
-      <label for="title">title</label>
-      <input id="title" type="text" />
-      <label for="author">author</label>
-      <input id="author" type="text" />
-      <label for="pages">pages</label>
-      <input id="pages" type="number" />
-      <label for="read-it">read it?</label>
-      <input id="read-it" type="checkbox" />
-      <button id="submit">submit</button>
-    </form>
-    <script src="script.js"></script>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ADD NEW BOOK CARD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="add-new-book">
+      <div class="input-container">
+        <label for="title">Title:</label>
+        <input class="book-input" id="title" type="text" required />
+      </div>
+      <div class="input-container">
+        <label for="author">Author:</label>
+        <input class="book-input" id="author" type="text" required />
+      </div>
+      <div class="input-container">
+        <label for="pages">Pages:</label>
+        <input class="book-input" id="pages" type="number" required />
+      </div>
+      <div class="input-container">
+        <label for="read-it">Finished Reading:</label>
+        <input class="book-checkbox" id="read-it" type="checkbox" />
+      </div>
+      <button id="add-in">Add</button>
+    </div>
+    <h1 class="booklist-title">My Booklist</h1>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~BOOKS~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="book-cards flex-r">
+      <div class="book-card">
+        <div class="book-title flex-r">
+          <h3 class="title">Title:</h3>
+          <h3 class="title-text">Dune</h3>
+        </div>
+        <div class="book-author flex-r">
+          <h3 class="author">Author:</h3>
+          <h3 class="author-text">Herbert Frank</h3>
+        </div>
+        <div class="book-pages flex-r">
+          <h3 class="pages">Pages:</h3>
+          <h3 class="pages-text">400</h3>
+        </div>
+        <div class="book-read-it flex-r">
+          <h3 class="read-it">Finished:</h3>
+          <h3 class="read-it-value">No</h3>
+        </div>
+      </div>
+      <!-- ^^^^^^^^^^^^^^^^^^^^^^^ -->
+    </div>
+    <button id="add">Add a New Book</button>
   </body>
 </html>

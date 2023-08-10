@@ -1,6 +1,12 @@
 "use strict";
 // / ---------------------------------Library array--------------------------------------------
 let myLibrary = [];
+const BookInfo = function (title, author, pages, readIt) {
+  this.title = title.value;
+  this.author = author.value;
+  this.pages = pages.value;
+  this.readIt = readIt.checked;
+};
 // / -----------------------------------Adding book interface------------------------------------
 const addNewBook = document.getElementById("add");
 const newBookCard = document.querySelector(".add-new-book");
@@ -26,13 +32,13 @@ addIn.addEventListener("click", function () {
     alert("Please fill in something!");
   } else {
     // ^ Create new book's object
-    const newBook = {};
-    newBook.title = title.value;
-    newBook.author = author.value;
-    newBook.pages = pages.value;
-    newBook.readIt = readIt.checked;
+    const newBook = new BookInfo(
+      title.value,
+      author.value,
+      pages.value,
+      readIt.checked
+    );
     // ^ Create book card element
-    // T- Study the code!
     const newBookCardElement = document.createElement("div");
     newBookCardElement.classList.add("book-card");
     newBookCardElement.innerHTML = `

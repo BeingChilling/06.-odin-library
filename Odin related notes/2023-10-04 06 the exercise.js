@@ -1,5 +1,3 @@
-const myLibrary = [];
-
 function Book(name, author, pages, read) {
   this.name = name;
   this.author = author;
@@ -15,3 +13,4 @@ function Book(name, author, pages, read) {
     }
   };
 }
+// create instance in console.

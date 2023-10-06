@@ -3,7 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A full scale book list from exercise</title>
+    <title>Odin Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=REM:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ADD NEW BOOK CARD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="add-new-book">
+      <div class="input-container">
+        <label for="title">Title:</label>
+        <input class="book-input" id="title" type="text" required />
+      </div>
+      <div class="input-container">
+        <label for="author">Author:</label>
+        <input class="book-input" id="author" type="text" required />
+      </div>
+      <div class="input-container">
+        <label for="pages">Pages:</label>
+        <input class="book-input" id="pages" type="number" required />
+      </div>
+      <div class="input-container">
+        <label for="read-it">Finished Reading:</label>
+        <input class="book-checkbox" id="read-it" type="checkbox" />
+      </div>
+      <button id="add-in">Add</button>
+    </div>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~BOOKS~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h1 class="booklist-title">My Booklist</h1>
+    <button id="add-new-book-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"
+        />
+      </svg>
+    </button>
+    <div class="book-cards flex-r"></div>
+  </body>
 </html>

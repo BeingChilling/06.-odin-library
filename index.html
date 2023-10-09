@@ -15,7 +15,7 @@
   </head>
   <body>
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ADD NEW BOOK CARD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div class="add-new-book">
+    <form class="add-new-book">
       <div class="input-container">
         <label for="title">Title:</label>
         <input class="book-input" id="title" type="text" required />
@@ -32,11 +32,18 @@
         <label for="read-it">Finished Reading:</label>
         <input class="book-checkbox" id="read-it" type="checkbox" />
       </div>
-      <button id="add-in">Add</button>
-    </div>
+      <button
+        type="submit"
+        id="add-to-bookshelf"
+        name="sumbit"
+        value="add-to-bookshelf"
+      >
+        Add
+      </button>
+    </form>
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~BOOKS~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <h1 class="booklist-title">My Booklist</h1>
-    <button id="add-new-book-button">
+    <button id="add-new-read-book">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
